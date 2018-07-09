@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const express = require('express');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
@@ -15,11 +16,6 @@ module.exports = {
       '@angular/platform-browser-dynamic',
       '@angular/router',
       'reflect-metadata',
-      /* Just one version of react, too. react-router is fine to have multiple versions of,
-       * though, so no need to put it in common dependencies
-       */
-      'react',
-      'react-dom',
     ],
   },
   output: {
@@ -36,6 +32,10 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
+      },
+      {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
       },
     ],
   },
@@ -61,6 +61,9 @@ module.exports = {
   devtool: 'source-map',
   externals: [],
   devServer: {
+      before: function(app) {
+          app.use('/static', express.static(__dirname + '/static'))
+      },
     historyApiFallback: true
   }
 };
