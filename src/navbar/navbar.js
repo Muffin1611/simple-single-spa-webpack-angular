@@ -5,10 +5,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import mainModule from './main-module.ts';
 
 const ngLifecycles = singleSpaAngular({
-  domElementGetter,
+  domElementGetter: () => document.getElementById('angular-navbar'),
   mainModule,
   angularPlatform: platformBrowserDynamic(),
-  template: `<app2 />`,
+  template: `<angular-navbar />`,
 })
 
 export function bootstrap(props) {
@@ -21,16 +21,4 @@ export function mount(props) {
 
 export function unmount(props) {
   return ngLifecycles.unmount(props);
-}
-
-function domElementGetter() {
-  // Make sure there is a div for us to render into
-  let el = document.getElementById('app2');
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'app2';
-    document.body.appendChild(el);
-  }
-
-  return el;
 }

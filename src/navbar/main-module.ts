@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {App2} from './app2.component';
+import {Navbar} from './navbar.component';
 import {enableProdMode} from '@angular/core';
 enableProdMode();
 
 @NgModule({
   imports: [BrowserModule],
-  declarations: [App2],
-  bootstrap: [App2]
+  declarations: [Navbar],
+  bootstrap: [Navbar]
 })
 export default class MainModule {
 }
