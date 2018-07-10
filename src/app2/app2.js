@@ -9,7 +9,6 @@ const ngLifecycles = singleSpaAngular({
   mainModule,
   angularPlatform: platformBrowserDynamic(),
   template: `<app2 />`,
-  Router,
 })
 
 export function bootstrap(props) {

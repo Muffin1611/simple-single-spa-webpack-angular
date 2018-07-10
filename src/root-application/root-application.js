@@ -1,7 +1,7 @@
 import * as singleSpa from 'single-spa';
 
 singleSpa.registerApplication('app-2', () =>
-  import ('../app2/app2.js'), pathPrefix('/app2'));
+  import ('../app2/app2.js'), () => true);
 
 singleSpa.start();
 

@@ -47,6 +47,7 @@ module.exports = {
       __dirname,
       'node_modules',
     ],
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
