@@ -6,6 +6,12 @@ singleSpa.registerApplication('angular-navbar', () =>
 singleSpa.registerApplication('angular-featured', () =>
     import ('../featured/featured.js'), () => true);
 
+singleSpa.registerApplication('angular-concerts', () =>
+    import ('../concerts/concerts.js'), () => true);
+
+singleSpa.registerApplication('angular-footer', () =>
+    import ('../footer/footer.js'), () => true);
+
 singleSpa.start();
 
 function pathPrefix(prefix) {

@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {Navbar} from './navbar.component';
+import { HttpClientModule } from '@angular/common/http';
+import {Concerts} from './concerts.component';
 import {enableProdMode} from '@angular/core';
 
 try {
@@ -10,9 +11,12 @@ try {
 }
 
 @NgModule({
-  imports: [BrowserModule],
-  declarations: [Navbar],
-  bootstrap: [Navbar]
+  imports: [
+      BrowserModule,
+      HttpClientModule
+  ],
+  declarations: [Concerts],
+  bootstrap: [Concerts]
 })
 export default class MainModule {
 }

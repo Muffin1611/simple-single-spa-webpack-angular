@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {Navbar} from './navbar.component';
+import {Footer} from './footer.component';
 import {enableProdMode} from '@angular/core';
 
 try {
@@ -11,8 +11,8 @@ try {
 
 @NgModule({
   imports: [BrowserModule],
-  declarations: [Navbar],
-  bootstrap: [Navbar]
+  declarations: [Footer],
+  bootstrap: [Footer]
 })
 export default class MainModule {
 }
